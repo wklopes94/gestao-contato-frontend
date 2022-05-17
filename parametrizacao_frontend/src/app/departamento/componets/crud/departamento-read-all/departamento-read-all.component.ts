@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Departamento } from 'src/app/departamento/departamento.model';
 
 @Component({
   selector: 'app-departamento-read-all',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./departamento-read-all.component.css']
 })
 export class DepartamentoReadAllComponent implements OnInit {
+  departamento: Departamento[] = []
+
+  displayedColumns: string[] = [ 'nome', 'hotelFk' ];
 
   constructor() { }
 

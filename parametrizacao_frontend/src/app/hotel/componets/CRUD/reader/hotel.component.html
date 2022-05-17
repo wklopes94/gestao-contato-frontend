@@ -22,8 +22,8 @@
     <ng-container matColumnDef="departamentos">
       <th mat-header-cell *matHeaderCellDef> DEPARTAMENTOS </th>
       <td mat-cell *matCellDef="let row">
-        <a class="departamentos">
-          <i  class="material-icons">table_chart</i>
+        <a routerLink="{{row.id}}/departamento" class="departamentos">
+          <i class="material-icons">table_chart</i>
         </a>
       </td>
     </ng-container>
