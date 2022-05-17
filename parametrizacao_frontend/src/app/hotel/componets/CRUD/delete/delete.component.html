@@ -1,0 +1,19 @@
+<form>
+  <h1> Eliminar Hotel</h1>
+<p>
+  <mat-form-field class="form">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="hoteis.nome"  type="text" name="nome" disabled>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field class="form">
+    <mat-label>Numero</mat-label>
+    <input matInput [(ngModel)]="hoteis.numeroFixo" type="text" name="numero"  disabled>
+  </mat-form-field>
+</p>
+  <div class="butoes">
+    <button (click)="delete()" class="delet" class="mat-elevation-z4" mat-stroked-button color="warn">Delete</button>
+    <button (click)="HotelCancel()" class="mat-elevation-z4" mat-stroked-button color="delete">Cancel</button>
+  </div>
+</form>
