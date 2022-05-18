@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './hotel/componets/CRUD/create/create.component';
 import { EditComponent } from './hotel/componets/CRUD/edit/edit.component';
 import { DepartamentoReadAllComponent } from './departamento/componets/crud/departamento-read-all/departamento-read-all.component';
+import { TipoColaboradorCreateComponent } from './tipo-colaborador/componets/crud/tipo-colaborador-create/tipo-colaborador-create.component';
 
 const routes: Routes = [{ path: 'hotel', loadChildren: () => import('./hotel/hotel.module').then(m => m.HotelModule) },
 { path: 'departamento', loadChildren: () => import('./departamento/departamento.module').then(m => m.DepartamentoModule) },
@@ -16,7 +17,9 @@ const routes: Routes = [{ path: 'hotel', loadChildren: () => import('./hotel/hot
 { path: 'hotel/create',  component: CreateComponent },
 { path:'hotel/delete/:id', component: DeleteComponent},
 { path:'hotel/update/:id', component: EditComponent},
- {path: 'hotel/:id_hot/departamento', component: DepartamentoReadAllComponent }];
+{path: 'hotel/:id_hot/departamento', component: DepartamentoReadAllComponent },
+{ path: 'tipo-colaborador/create',  component: TipoColaboradorCreateComponent },
+ {path: 'departamento/create', component: TipoColaboradorCreateComponent}];
 
 
 @NgModule({

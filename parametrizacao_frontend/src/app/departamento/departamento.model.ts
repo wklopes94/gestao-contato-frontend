@@ -1,5 +1,6 @@
 export interface Departamento {
   id?: String;
-  hotelFk: String;
+  nome: String;
+  utilizador: String;
 
 }

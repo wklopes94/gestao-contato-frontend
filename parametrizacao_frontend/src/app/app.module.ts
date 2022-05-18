@@ -28,8 +28,6 @@ import {MatInputModule} from '@angular/material/input';
     FooterComponent,
     NavComponent
 
-
-
   ],
   imports: [
     BrowserModule,
