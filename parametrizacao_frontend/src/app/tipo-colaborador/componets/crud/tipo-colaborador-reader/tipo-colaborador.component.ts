@@ -19,7 +19,7 @@ export class TipoColaboradorComponent implements OnInit {
   ngOnInit(): void {
     this.findAll();
   }
-  displayedColumns: string[] = [ 'tipoColaborador', 'acao'];
+  displayedColumns: string[] = ['tipoColaborador', 'acao'];
 
   findAll(){
     this.service.findAll().subscribe(resposta => {

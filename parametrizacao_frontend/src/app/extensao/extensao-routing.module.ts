@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExtensaoComponent } from './extensao.component';
+import { ExtensaoComponent } from './componets/crud/extensao-reader/extensao.component';
 
 const routes: Routes = [{ path: '', component: ExtensaoComponent }];
 
