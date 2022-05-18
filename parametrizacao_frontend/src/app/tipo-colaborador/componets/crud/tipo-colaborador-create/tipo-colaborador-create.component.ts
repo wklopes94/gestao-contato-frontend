@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
+import { TipoColaboradorService } from './../tipo-colaborador.service';
 import { Component, OnInit } from '@angular/core';
+import { TipoColaboradorModel } from '../tipo-colaborador-model';
 
 @Component({
   selector: 'app-tipo-colaborador-create',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipoColaboradorCreateComponent implements OnInit {
 
-  constructor() { }
+  tipoColaborador: TipoColaboradorModel = {
+    tipoColaborador: ''
+  }
+
+  constructor(private service: TipoColaboradorService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  create(): void{
+    this.service.create(this.tipoColaborador).subscribe((resposta) => {
+      this.router.navigate(['tipocolaborador'])
+      //this.service.mensagem('Hotel Criado com Sucesso');
+
+
+    })
+}
+TipoColabCancel(): void{
+  this.router.navigate(['tipocolaborador'])
+}
 }

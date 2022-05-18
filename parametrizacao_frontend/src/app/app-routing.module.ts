@@ -12,14 +12,13 @@ const routes: Routes = [{ path: 'hotel', loadChildren: () => import('./hotel/hot
 { path: 'departamento', loadChildren: () => import('./departamento/departamento.module').then(m => m.DepartamentoModule) },
 { path: 'tipocolaborador', loadChildren: () => import('./tipo-colaborador/tipo-colaborador.module').then(m => m.TipoColaboradorModule) },
 { path: 'extensao', loadChildren: () => import('./extensao/extensao.module').then(m => m.ExtensaoModule) },
-{ path: 'tipo-colaborador', loadChildren: () => import('./tipo-colaborador/tipo-colaborador.module').then(m => m.TipoColaboradorModule) },
 { path: 'colaborador', loadChildren: () => import('./colaborador/colaborador.module').then(m => m.ColaboradorModule) },
 { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
 { path: 'hotel/create',  component: CreateComponent },
 { path:'hotel/delete/:id', component: DeleteComponent},
 { path:'hotel/update/:id', component: EditComponent},
 { path: 'hotel/:id_hot/departamento', component: DepartamentoReadAllComponent },
-{ path: 'tipo-colaborador/create',  component: TipoColaboradorCreateComponent },
+{ path: 'tipocolaborador/create',  component: TipoColaboradorCreateComponent },
 { path: 'departamento/create',  component: DepartamentoCreateComponent }];
 
 

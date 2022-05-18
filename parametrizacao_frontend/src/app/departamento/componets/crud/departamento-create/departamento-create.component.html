@@ -3,13 +3,25 @@
 <p>
   <mat-form-field class="form">
     <mat-label>Nome</mat-label>
-    <input matInput [(ngModel)]="departamento.nome" type="text" name="nome" placeholder="Nome do Departamento">
+    <input matInput [(ngModel)]="departamento.nome" type="text" name="nome"  required minlength="4"  #name="ngModel">
+      <div *ngIf="name.errors?.['required']">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors?.['minlength']">
+        Name must be at least 4 characters long.
+      </div>
   </mat-form-field>
 </p>
 <p>
   <mat-form-field class="form">
     <mat-label>Hotel</mat-label>
-    <input matInput [(ngModel)]="departamento.hotelFk" type="text" name="numero" placeholder="Numero do Hotel">
+    <input matInput [(ngModel)]="departamento.hotelFk" type="text" name="numero"  required minlength="4"  #name="ngModel">
+      <div *ngIf="name.errors?.['required']">
+        Hotel is required.
+      </div>
+      <div *ngIf="name.errors?.['minlength']">
+        Number must be at least 4 characters long.
+      </div>
   </mat-form-field>
 </p>
   <div class="butoes">

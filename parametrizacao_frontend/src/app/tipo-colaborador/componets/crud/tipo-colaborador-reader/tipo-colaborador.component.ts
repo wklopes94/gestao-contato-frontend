@@ -31,7 +31,7 @@ export class TipoColaboradorComponent implements OnInit {
   }
 
   DeparCreate(): void{
-    this.router.navigate(["departamento/create"])
+    this.router.navigate(["tipocolaborador/create"])
   }
 
 
