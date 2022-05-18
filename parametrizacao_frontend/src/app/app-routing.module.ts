@@ -1,3 +1,4 @@
+import { DepartamentoUpdateComponent } from './departamento/componets/crud/departamento-update/departamento-update.component';
 import { DepartamentoCreateComponent } from './departamento/componets/crud/departamento-create/departamento-create.component';
 import { DeleteComponent } from './hotel/componets/CRUD/delete/delete.component';
 import { HotelComponent } from './hotel/componets/CRUD/reader/hotel.component';
@@ -19,7 +20,8 @@ const routes: Routes = [{ path: 'hotel', loadChildren: () => import('./hotel/hot
 { path:'hotel/update/:id', component: EditComponent},
 { path: 'hotel/:id_hot/departamento', component: DepartamentoReadAllComponent },
 { path: 'tipocolaborador/create',  component: TipoColaboradorCreateComponent },
-{ path: 'departamento/create',  component: DepartamentoCreateComponent }];
+{ path: 'departamento/create',  component: DepartamentoCreateComponent },
+{ path:'departamento/update/:id', component: DepartamentoUpdateComponent}];
 
 
 @NgModule({

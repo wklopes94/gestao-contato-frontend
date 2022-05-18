@@ -1,3 +1,6 @@
+import { ActivatedRoute, Router } from '@angular/router';
+import { DepartamentoService } from './../../../../departamento/departamento.service';
+import { ExtensaoModel } from './../extensao-reader/extensao-model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExtensaoUpdateComponent implements OnInit {
 
-  constructor() { }
+  extensao: ExtensaoModel = {
+    id:'',
+    numero: '',
+    departamentoFk: ''
+
+  }
+
+  constructor(private service: DepartamentoService, private route: ActivatedRoute , private router: Router) { }
 
   ngOnInit(): void {
   }
+
+
+
+
 
 }
