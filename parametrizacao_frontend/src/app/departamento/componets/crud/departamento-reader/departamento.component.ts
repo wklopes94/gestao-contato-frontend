@@ -12,7 +12,7 @@ export class DepartamentoComponent implements OnInit {
 
   departamento: Departamento[] = []
 
-  displayedColumns: string[] = [ 'nome', 'utilizador', 'acao'];
+  displayedColumns: string[] = [ 'nome', 'hotelFk', 'acao'];
 
   constructor(private service: DepartamentoService, private router: Router) { }
 
@@ -26,6 +26,10 @@ export class DepartamentoComponent implements OnInit {
       this.departamento = resposta;
 
     })
+  }
+
+  DepartamentoCreate(): void{
+    this.router.navigate(["departamento/create"])
   }
 
 }

@@ -29,6 +29,6 @@ export class HotelComponent implements OnInit {
     })
   }
   HotelCreate(): void{
-    this.router.navigate(["departamento/create"])
+    this.router.navigate(["hotel/create"])
   }
 }

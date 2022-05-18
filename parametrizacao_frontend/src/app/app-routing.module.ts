@@ -20,7 +20,7 @@ const routes: Routes = [{ path: 'hotel', loadChildren: () => import('./hotel/hot
 { path:'hotel/update/:id', component: EditComponent},
 { path: 'hotel/:id_hot/departamento', component: DepartamentoReadAllComponent },
 { path: 'tipo-colaborador/create',  component: TipoColaboradorCreateComponent },
-{ path: 'departemnto/create',  component: DepartamentoCreateComponent }];
+{ path: 'departamento/create',  component: DepartamentoCreateComponent }];
 
 
 @NgModule({
