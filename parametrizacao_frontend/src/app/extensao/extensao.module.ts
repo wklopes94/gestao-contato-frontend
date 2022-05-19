@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { ExtensaoRoutingModule } from './extensao-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,7 +29,8 @@ import { ExtensaoDeleteComponent } from './componets/crud/extensao-delete/extens
     MatFormFieldModule,
     FormsModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
 
   ]
 })

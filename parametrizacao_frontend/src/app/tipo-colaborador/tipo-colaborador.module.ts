@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { TipoColaboradorRoutingModule } from './tipo-colaborador-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,7 +30,8 @@ import { TipoColaboradorCreateComponent } from './componets/crud/tipo-colaborado
     MatFormFieldModule,
     FormsModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ]
 })
 export class TipoColaboradorModule { }

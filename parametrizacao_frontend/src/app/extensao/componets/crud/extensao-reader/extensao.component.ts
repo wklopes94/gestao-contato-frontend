@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { ExtensaoService } from './../../../extensao.service';
 import { ExtensaoModel } from './extensao-model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-extensao',
@@ -12,6 +12,7 @@ export class ExtensaoComponent implements OnInit {
 
 
   extensao: ExtensaoModel[] = []
+
 
 
   constructor(private service: ExtensaoService, private router: Router) { }

@@ -14,6 +14,7 @@ import { HotelComponent } from './componets/CRUD/reader/hotel.component';
 import { CreateComponent } from './componets/CRUD/create/create.component';
 import { DeleteComponent } from './componets/CRUD/delete/delete.component';
 import { EditComponent } from './componets/CRUD/edit/edit.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -36,7 +37,9 @@ import { EditComponent } from './componets/CRUD/edit/edit.component';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatPaginatorModule
+
 
 
   ]

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
 import { DepartamentoRoutingModule } from './departamento-routing.module';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { DepartamentoReadAllComponent } from './componets/crud/departamento-read-all/departamento-read-all.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,6 +13,7 @@ import { DepartamentoCreateComponent } from './componets/crud/departamento-creat
 import { DepartamentoDeleteComponent } from './componets/crud/departamento-delete/departamento-delete.component';
 import { DepartamentoUpdateComponent } from './componets/crud/departamento-update/departamento-update.component';
 import { DepartamentoComponent } from './componets/crud/departamento-reader/departamento.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -32,7 +33,9 @@ import { DepartamentoComponent } from './componets/crud/departamento-reader/depa
     MatFormFieldModule,
     FormsModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatPaginatorModule
   ]
 })
 export class DepartamentoModule { }

@@ -14,14 +14,17 @@
 </p>
 <p>
   <mat-form-field class="form">
-    <mat-label>Hotel</mat-label>
-    <input matInput [(ngModel)]="departamento.hotelFk" type="text" name="numero"  required minlength="4"  #name="ngModel">
-      <div *ngIf="name.errors?.['required']">
-        Hotel is required.
-      </div>
-      <div *ngIf="name.errors?.['minlength']">
-        Number must be at least 4 characters long.
-      </div>
+    <mat-label> Hotel </mat-label>
+
+
+
+
+      <mat-select [(ngModel)]="hotel" placeholder="">
+
+          <mat-option [value]="hotel.id" *ngFor="let hotel of hoteis">{{hotel.nome}}</mat-option>
+      </mat-select>
+
+
   </mat-form-field>
 </p>
   <div class="butoes">
