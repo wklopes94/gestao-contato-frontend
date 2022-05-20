@@ -25,7 +25,7 @@ export class EditComponent implements OnInit {
   }
 
   findById(): void{
-    this.service.findById(this.hoteis.id!).subscribe((resposta) =>{
+      this.service.findById(this.hoteis.id!).subscribe((resposta) =>{
       this.hoteis = resposta
       console.log(this.hoteis)
     })

@@ -4,8 +4,7 @@ import { DepartamentoService } from 'src/app/departamento/departamento.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+
 
 
 
@@ -19,11 +18,16 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 
 export class DepartamentoComponent implements OnInit {
-  @ViewChild('paginator') paginator!: MatPaginator
+  //@ViewChild('paginator') paginator: MatPaginator
   departamento: Departamento[] = []
   displayedColumns: string[] = [ 'nome', 'hotelFk', 'acao'];
   //dataSource = MatTableDataSource<Departamento>;
+  hoteis: Departamento = {
+    id:'',
+    nome: '',
+    hotelFk: ''
 
+  }
 
 
   constructor(private service: DepartamentoService, private router: Router) { }

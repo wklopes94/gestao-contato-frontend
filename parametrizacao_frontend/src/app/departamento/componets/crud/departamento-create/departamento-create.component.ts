@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Departamento } from 'src/app/departamento/departamento.model';
 import { DepartamentoService } from 'src/app/departamento/departamento.service';
 import { HotelServiceService } from 'src/app/hotel/hotel-service.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-departamento-create',
@@ -21,6 +22,7 @@ export class DepartamentoCreateComponent implements OnInit {
   }
   hoteis: hotel[] = []
 
+
   departamento: Departamento = {
     nome: '',
     hotelFk: ''
@@ -30,14 +32,16 @@ export class DepartamentoCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAll();
+
   }
 
-  create(): void{
-    this.service.create(this.departamento).subscribe((resposta) => {
+  createDep(): void{
+    this.service.createDep(this.departamento, this.departamento.hotelFk).subscribe((resposta) => {
       this.router.navigate(['departamento'])
+      console.log(resposta)
     })
-
   }
+
 
   DepartamentoCancel(): void{
     this.router.navigate(["departamento"])

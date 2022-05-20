@@ -20,10 +20,15 @@ export class DepartamentoReadAllComponent implements OnInit {
   constructor(private service: DepartamentoService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-  //  this.id_hot = this.route.snapshot.paramMap.get("id_hot")!;
+   this.id_hot = this.route.snapshot.paramMap.get("id_hot")!;
+   this.findAll();
   }
 
   findAll(): void{
+    this.service.findAllByHotel(this.id_hot).subscribe((resposta) =>{
+      this.departamento = resposta;
+      console.log(this.departamento)
+    } )
 
   }
 

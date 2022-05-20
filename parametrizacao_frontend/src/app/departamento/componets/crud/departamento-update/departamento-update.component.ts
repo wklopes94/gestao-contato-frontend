@@ -22,6 +22,7 @@ export class DepartamentoUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.departamento.id = this.route.snapshot.paramMap.get('id')!
     this.findById()
+
   }
 
   findById(): void{
@@ -36,7 +37,7 @@ export class DepartamentoUpdateComponent implements OnInit {
   }
   update(): void{
     this.service.update(this.departamento).subscribe((resposta) =>{
-    this.router.navigate(['departamento']);
+    this.router.navigate(['hotel']);
 
     }, err => {
         console.log(err)
