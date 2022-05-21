@@ -16,6 +16,7 @@ import { DepartamentoComponent } from './componets/crud/departamento-reader/depa
 import {MatSelectModule} from '@angular/material/select';
 
 
+
 @NgModule({
   declarations: [
     DepartamentoComponent,

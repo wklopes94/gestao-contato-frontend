@@ -5,6 +5,19 @@
 
  <button class="mat-elevation-z4" (click)="HotelCreate()"  mat-stroked-button color="primary">Adicionar Hotel</button>
 
+<p>
+  <mat-toolbar class="hotel-header">
+    <span>
+    <mat-label> Hotel </mat-label>
+      <mat-select id="hotel_fk" name="hotelfk"  placeholder="">
+          <mat-option   [value]="hotel.id" *ngFor="let hotel of hoteis">{{hotel.nome}}</mat-option>
+      </mat-select>
+    </span>
+    <span class="search">
+      <button class="mat-elevation-z4"  (click)="HotelCreate()"  mat-stroked-button color="primary">Search</button>
+    </span>
+  </mat-toolbar>
+</p>
 <div class="mat-elevation-z8 content-table">
   <table class= "table" mat-table [dataSource]="hoteis">
 

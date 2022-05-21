@@ -39,6 +39,18 @@ h1{
   padding-left: 1rem;
   font-size: 1.5rem;
 }
+.hotelfk{
+  size: 5rem;
+}
+span{
+  display: flex;
+  align-items: center;
+}
+.search{
+  display: flex;
+  align-items:flex-end;
+
+}
 
 
 

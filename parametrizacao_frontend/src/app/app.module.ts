@@ -15,6 +15,7 @@ import { FooterComponent } from './componets/teamplate/footer/footer.component';
 import { NavComponent } from './componets/teamplate/nav/nav.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { GuestComponent } from './guest/guest.component';
 
 
 
@@ -28,7 +29,8 @@ import {MatSelectModule} from '@angular/material/select';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    GuestComponent
 
   ],
   imports: [
