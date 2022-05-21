@@ -37,7 +37,7 @@ export class DepartamentoUpdateComponent implements OnInit {
   }
   update(): void{
     this.service.update(this.departamento).subscribe((resposta) =>{
-    this.router.navigate(['hotel']);
+    this.router.navigate(['departamento']);
 
     }, err => {
         console.log(err)

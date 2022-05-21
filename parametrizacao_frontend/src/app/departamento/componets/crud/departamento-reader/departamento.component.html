@@ -8,7 +8,6 @@
 <div class="mat-elevation-z8 content-table">
   <table class= "table" mat-table [dataSource]="departamento">
 
-
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> NOME DEPARTAMENTO </th>
       <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
@@ -18,8 +17,6 @@
       <th mat-header-cell *matHeaderCellDef> HOTEL </th>
       <td mat-cell *matCellDef="let row"> {{row.hotelFk}} </td>
     </ng-container>
-
-
 
     <ng-container matColumnDef="acao">
       <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>

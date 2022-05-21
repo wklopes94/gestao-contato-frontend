@@ -14,7 +14,7 @@
 </p>
 <p>
   <mat-form-field class="form">
-    <mat-label>Numero</mat-label>
+    <mat-label>Hotel</mat-label>
     <input matInput [(ngModel)]="departamento.hotelFk" type="text" name="numero"  required minlength="4"  #name="ngModel">
 
     <div *ngIf="name.errors?.['required']">

@@ -23,23 +23,23 @@ findAll(): Observable<Departamento[]>{
 }
 
 findById(id: String): Observable<Departamento>{
-  const url = `${this.baseUrl}/Departamento/${id}`
+  const url = `${this.baseUrl}/departamento/${id}`
   return this.http.get<Departamento>(url)
 }
 
 create(Departamento: Departamento): Observable<Departamento>{
-  const url = `${this.baseUrl}/Departamento`
+  const url = `${this.baseUrl}/departamento`
   return this.http.post<Departamento>(url, Departamento);
 
 }
 
 delete(id: String): Observable<void>{
-  const url = `${this.baseUrl}/Departamento/${id}`
+  const url = `${this.baseUrl}/departamento/${id}`
   return this.http.delete<void>(url)
 }
 
 update(Departamento: Departamento): Observable<void>{
-  const url = `${this.baseUrl}/Departamento/${Departamento.id}`
+  const url = `${this.baseUrl}/departamento/${Departamento.id}`
   return this.http.put<void>(url, Departamento)
 }
 
