@@ -1,30 +1,36 @@
 import { TipoColaboradorService } from './../tipo-colaborador.service';
 import { TipoColaboradorModel } from './../tipo-colaborador-model';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-tipo-colaborador',
   templateUrl: './tipo-colaborador.component.html',
   styleUrls: ['./tipo-colaborador.component.css']
 })
-export class TipoColaboradorComponent implements OnInit {
+export class TipoColaboradorComponent implements AfterViewInit {
 
-  tipoColaborador: TipoColaboradorModel[] = []
+  tipoColaboradores: TipoColaboradorModel[] = []
+  displayedColumns: string[] = ['tipoColaborador', 'acao'];
+  dataSource = new MatTableDataSource<TipoColaboradorModel>(this.tipoColaboradores);
 
-
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private service: TipoColaboradorService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.findAll();
   }
-  displayedColumns: string[] = ['tipoColaborador', 'acao'];
+
 
   findAll(){
     this.service.findAll().subscribe(resposta => {
-      console.log(resposta)
-      this.tipoColaborador = resposta;
+    this.tipoColaboradores = resposta;
+    this.dataSource = new MatTableDataSource<TipoColaboradorModel>(this.tipoColaboradores);
+    this.dataSource.paginator = this.paginator;
+    console.log(resposta)
 
     })
 
@@ -33,6 +39,4 @@ export class TipoColaboradorComponent implements OnInit {
   DeparCreate(): void{
     this.router.navigate(["tipocolaborador/create"])
   }
-
-
 }

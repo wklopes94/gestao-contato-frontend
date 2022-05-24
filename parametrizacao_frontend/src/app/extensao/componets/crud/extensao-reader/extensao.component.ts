@@ -1,33 +1,44 @@
-import { Router } from '@angular/router';
 import { ExtensaoService } from './../../../extensao.service';
 import { ExtensaoModel } from './extensao-model';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-extensao',
   templateUrl: './extensao.component.html',
   styleUrls: ['./extensao.component.css']
 })
-export class ExtensaoComponent implements OnInit {
+export class ExtensaoComponent implements AfterViewInit {
 
+  extensoes: ExtensaoModel[] = []
+  displayedColumns: string[] = ['numero','departamentoFk', 'acao'];
+  dataSource = new MatTableDataSource<ExtensaoModel>(this.extensoes);
 
-  extensao: ExtensaoModel[] = []
-
-
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private service: ExtensaoService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.findAll();
   }
-  displayedColumns: string[] = ['numero','departamentoFk', 'acao'];
+
 
   findAll(){
     this.service.findAll().subscribe(resposta => {
-      console.log(resposta)
-      this.extensao = resposta;
+    this.extensoes = resposta;
+    this.dataSource = new MatTableDataSource<ExtensaoModel>(this.extensoes);
+    this.dataSource.paginator = this.paginator;
+    console.log(resposta)
 
     })
+
   }
+/*
+  ExtensaoCreate(): void{
+    this.router.navigate(["departamento/create"])
+  }
+*/
 
 }

@@ -1,53 +1,44 @@
 import { Departamento } from './../../../departamento.model';
-
 import { DepartamentoService } from 'src/app/departamento/departamento.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
-
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-
-
-
-
-
-
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
-  selector: 'app-departamento',
+   selector: 'app-departamento',
   templateUrl: './departamento.component.html',
   styleUrls: ['./departamento.component.css']
 })
+export class DepartamentoComponent implements AfterViewInit {
 
-export class DepartamentoComponent implements OnInit {
-  //@ViewChild('paginator') paginator: MatPaginator
-  departamento: Departamento[] = []
+  departamentos: Departamento[] = []
   displayedColumns: string[] = [ 'nome', 'hotelFk', 'acao'];
-  //dataSource = MatTableDataSource<Departamento>;
-  hoteis: Departamento = {
-    id:'',
-    nome: '',
-    hotelFk: ''
+  dataSource = new MatTableDataSource<Departamento>(this.departamentos);
 
-  }
-
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private service: DepartamentoService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.findAll();
-    //this.dataSource=new MatTableDataSource(this.departamento);
-    //this.dataSource.paginator=this.paginator;
   }
+
 
   findAll(){
     this.service.findAll().subscribe(resposta => {
-      console.log(resposta)
-      this.departamento = resposta;
+    this.departamentos = resposta;
+    this.dataSource = new MatTableDataSource<Departamento>(this.departamentos);
+    this.dataSource.paginator = this.paginator;
+    console.log(resposta)
 
     })
+
   }
 
   DepartamentoCreate(): void{
     this.router.navigate(["departamento/create"])
   }
+
 
 }

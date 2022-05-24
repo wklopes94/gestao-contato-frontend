@@ -17,9 +17,17 @@ export class HotelServiceService {
 
     findAll(): Observable<hotel[]>{
       const url = `${this.baseUrl}/hotel`
-      return this.http.get<hotel[]>(url)
+      return this.http.get<hotel[]>(url);
     }
-
+/*
+    findAllPaginator(queryBuilder: QueryBuilder): Observable<Page<hotel>>{
+      const url = `${this.baseUrl}/hotel?`
+      .get<hotel[]>(`${this.baseUrl}/hotel?${queryBuilder.buildQueryString()}`,{observe: 'response'})
+      .pipe(
+        map(response => <Page<hotel>>Page.fromResponse(response))
+      );
+    }
+*/
     findById(id: String): Observable<hotel>{
       const url = `${this.baseUrl}/hotel/${id}`
       return this.http.get<hotel>(url)
