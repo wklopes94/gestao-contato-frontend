@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { hotel } from './componets/CRUD/reader/hotel.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -13,7 +14,7 @@ export class HotelServiceService {
 
     baseUrl: String = environment.baseUrl;
 
-  constructor(private http: HttpClient ) {}
+  constructor(private http: HttpClient, private snack: MatSnackBar) {}
 
     findAll(): Observable<hotel[]>{
       const url = `${this.baseUrl}/hotel`
@@ -47,6 +48,15 @@ export class HotelServiceService {
     update(hotel: hotel): Observable<void>{
       const url = `${this.baseUrl}/hotel/${hotel.id}`
       return this.http.put<void>(url, hotel)
+    }
+
+    message(msg: String): void{
+      this.snack.open(`${msg}`, 'OK',{
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+        duration: 4000
+      })
+
     }
 
   }

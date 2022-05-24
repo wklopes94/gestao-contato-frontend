@@ -28,7 +28,7 @@ export class CreateComponent implements OnInit {
   create(): void{
     this.service.create(this.hotel).subscribe((resposta) => {
       this.router.navigate(['hotel'])
-      //this.service.mensagem('Hotel Criado com Sucesso');
+      this.service.message('Hotel Criado com Sucesso');
 
 
     })

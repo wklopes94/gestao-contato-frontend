@@ -16,11 +16,8 @@ h1{
 
 }
 button{
-  margin-bottom: 1rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  width: 25%;
+
+
 }
-.save{
-  margin-bottom: 3rem;
-  color: green;
-}
+

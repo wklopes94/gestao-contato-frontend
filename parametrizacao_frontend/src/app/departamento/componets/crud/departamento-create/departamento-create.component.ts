@@ -38,6 +38,7 @@ export class DepartamentoCreateComponent implements OnInit {
   createDep(): void{
     this.service.createDep(this.departamento, this.departamento.hotelFk).subscribe((resposta) => {
       this.router.navigate(['departamento'])
+      this.servicoHotel.message('Departamento Criado com Sucesso');
       console.log(resposta)
     })
   }
