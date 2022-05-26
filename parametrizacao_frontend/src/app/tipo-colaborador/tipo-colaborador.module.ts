@@ -12,12 +12,13 @@ import {TipoColaboradorComponent } from './componets/crud/tipo-colaborador-reade
 import { TipoColaboradorDeleteComponent } from './componets/crud/tipo-colaborador-delete/tipo-colaborador-delete.component';
 import { TipoColaboradorUpdateComponent } from './componets/crud/tipo-colaborador-update/tipo-colaborador-update.component';
 import { TipoColaboradorCreateComponent } from './componets/crud/tipo-colaborador-create/tipo-colaborador-create.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     TipoColaboradorComponent,
-
     TipoColaboradorDeleteComponent,
     TipoColaboradorUpdateComponent,
     TipoColaboradorCreateComponent
@@ -31,7 +32,10 @@ import { TipoColaboradorCreateComponent } from './componets/crud/tipo-colaborado
     FormsModule,
     MatSnackBarModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatIconModule
   ]
 })
 export class TipoColaboradorModule { }

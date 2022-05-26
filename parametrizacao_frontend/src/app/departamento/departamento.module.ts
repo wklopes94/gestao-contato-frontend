@@ -1,3 +1,4 @@
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -14,6 +15,7 @@ import { DepartamentoDeleteComponent } from './componets/crud/departamento-delet
 import { DepartamentoUpdateComponent } from './componets/crud/departamento-update/departamento-update.component';
 import { DepartamentoComponent } from './componets/crud/departamento-reader/departamento.component';
 import {MatSelectModule} from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -36,7 +38,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatSnackBarModule,
     MatInputModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatToolbarModule,
+    MatIconModule
   ]
 })
 export class DepartamentoModule { }

@@ -8,7 +8,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
 import { HotelComponent } from './componets/CRUD/reader/hotel.component';
@@ -16,7 +16,9 @@ import { CreateComponent } from './componets/CRUD/create/create.component';
 import { DeleteComponent } from './componets/CRUD/delete/delete.component';
 import { EditComponent } from './componets/CRUD/edit/edit.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {MatSortModule} from '@angular/material/sort';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -41,7 +43,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSnackBarModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSortModule,
+    ReactiveFormsModule,
+    MatIconModule
 
 
 

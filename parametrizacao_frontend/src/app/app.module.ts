@@ -17,6 +17,8 @@ import { NavComponent } from './componets/teamplate/nav/nav.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { GuestComponent } from './guest/guest.component';
+import {MatSortModule} from '@angular/material/sort';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
@@ -48,6 +50,9 @@ import { GuestComponent } from './guest/guest.component';
     MatSelectModule,
     MatPaginatorModule,
     MatSnackBarModule,
+    MatSortModule,
+    ReactiveFormsModule,
+    FormsModule
 
 
 

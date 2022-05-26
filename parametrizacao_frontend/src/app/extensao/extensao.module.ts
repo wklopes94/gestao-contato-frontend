@@ -12,6 +12,9 @@ import { ExtensaoCreateComponent } from './componets/crud/extensao-create/extens
 import { ExtensaoComponent } from './componets/crud/extensao-reader/extensao.component';
 import { ExtensaoUpdateComponent } from './componets/crud/extensao-update/extensao-update.component';
 import { ExtensaoDeleteComponent } from './componets/crud/extensao-delete/extensao-delete.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { ExtensaoDeleteComponent } from './componets/crud/extensao-delete/extens
     FormsModule,
     MatSnackBarModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatIconModule
 
   ]
 })

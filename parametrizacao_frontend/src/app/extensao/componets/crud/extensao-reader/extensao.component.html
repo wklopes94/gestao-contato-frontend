@@ -3,7 +3,22 @@
     <h1>Extensão</h1>
   </div>
 
- <button class="mat-elevation-z4"   mat-stroked-button color="primary">Adicionar Extensão</button>
+ <button class="mat-elevation-z4"   mat-stroked-button color="primary"><mat-icon >add</mat-icon>Adicionar Extensão</button>
+
+ <p>
+  <mat-toolbar class="hotel-header">
+    <mat-form-field class="form" >
+
+      <mat-label> Extensão </mat-label>
+         <mat-select matNativeControl>
+             <mat-option> -- select estensão -- </mat-option>
+             <mat-option [value]="extensao.id" *ngFor="let extensao of extensoes" >{{extensao.numero}}</mat-option>
+         </mat-select>
+
+    </mat-form-field>
+
+  </mat-toolbar>
+</p>
 
 <div class="mat-elevation-z8 content-table">
   <table class= "table" mat-table [dataSource]="extensoes">
@@ -36,7 +51,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator #paginator [length]="100" [pageSizeOptions]="[3,5,10]" aria-label="select page"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[3,5,10]" showFirstLastButtons></mat-paginator>
 </div>
 
 </div>

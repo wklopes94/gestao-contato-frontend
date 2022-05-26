@@ -3,7 +3,29 @@
     <h1>Departamento</h1>
   </div>
 
- <button class="mat-elevation-z4" (click)="DepartamentoCreate()"  mat-stroked-button color="primary">Adicionar Departamento</button>
+ <button class="mat-elevation-z4" (click)="DepartamentoCreate()"  mat-stroked-button color="primary"> <mat-icon class="mat-18">add</mat-icon> Adicionar Departamento</button>
+
+ <p>
+  <mat-toolbar class="hotel-header">
+    <mat-form-field class="form" >
+
+      <mat-label> Hotel </mat-label>
+         <mat-select matNativeControl class="select">
+             <mat-option> -- select hotel -- </mat-option>
+             <mat-option [value]="hotel.id" *ngFor="let hotel of hoteis" >{{hotel.nome}}</mat-option>
+         </mat-select>
+      </mat-form-field>
+      <mat-form-field class="form" >
+         <mat-label> Departamento </mat-label>
+         <mat-select matNativeControl class="select">
+             <mat-option> -- select departamento -- </mat-option>
+             <mat-option [value]="departamento.id" *ngFor="let departamento of departamentos" >{{departamento.nome}}</mat-option>
+         </mat-select>
+      </mat-form-field>
+
+
+  </mat-toolbar>
+</p>
 
 <div class="mat-elevation-z8 content-table">
   <table class= "table" mat-table [dataSource]="dataSource">
@@ -34,7 +56,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator #paginator [length]="100" [pageSizeOptions]="[3,5,10]" aria-label="select page"></mat-paginator>
+  <mat-paginator  [pageSizeOptions]="[3,5,10]" showFirstLastButtons></mat-paginator>
 
 </div>
 
