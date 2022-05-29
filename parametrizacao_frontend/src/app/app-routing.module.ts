@@ -1,3 +1,4 @@
+import { GuestComponent } from './guest/guest.component';
 import { DepartamentoDeleteComponent } from './departamento/componets/crud/departamento-delete/departamento-delete.component';
 import { DepartamentoUpdateComponent } from './departamento/componets/crud/departamento-update/departamento-update.component';
 import { DepartamentoCreateComponent } from './departamento/componets/crud/departamento-create/departamento-create.component';

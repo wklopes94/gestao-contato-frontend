@@ -51,6 +51,7 @@ export class DepartamentoComponent implements AfterViewInit {
 
   DepartamentoCreate(): void{
     this.router.navigate(["departamento/create"])
+    console.log
   }
 
 

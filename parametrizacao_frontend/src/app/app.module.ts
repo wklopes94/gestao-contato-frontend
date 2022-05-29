@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -19,6 +19,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { GuestComponent } from './guest/guest.component';
 import {MatSortModule} from '@angular/material/sort';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 
 
@@ -48,11 +49,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HttpClientModule,
     MatInputModule,
     MatSelectModule,
-    MatPaginatorModule,
     MatSnackBarModule,
     MatSortModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+
 
 
 

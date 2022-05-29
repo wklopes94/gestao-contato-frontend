@@ -15,7 +15,7 @@ import { DepartamentoDeleteComponent } from './componets/crud/departamento-delet
 import { DepartamentoUpdateComponent } from './componets/crud/departamento-update/departamento-update.component';
 import { DepartamentoComponent } from './componets/crud/departamento-reader/departamento.component';
 import {MatSelectModule} from '@angular/material/select';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 
 
 
@@ -32,6 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     DepartamentoRoutingModule,
     MatTableModule,
+    MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
     FormsModule,
@@ -40,7 +41,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatIconModule
+
   ]
 })
 export class DepartamentoModule { }

@@ -1,5 +1,13 @@
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
 
 import { ColaboradorRoutingModule } from './colaborador-routing.module';
 import { ColaboradorComponent } from './colaborador.component';
@@ -19,7 +27,17 @@ import { ColaboradorUpdateComponent } from './componets/crud/colaborador-update/
   ],
   imports: [
     CommonModule,
-    ColaboradorRoutingModule
+    ColaboradorRoutingModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatSortModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
+    MatButtonModule,
+
+
   ]
 })
 export class ColaboradorModule { }

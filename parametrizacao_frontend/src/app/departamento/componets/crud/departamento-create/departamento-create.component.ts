@@ -14,7 +14,7 @@ import { Subscriber } from 'rxjs';
 
 export class DepartamentoCreateComponent implements OnInit {
 
-  hotel: hotel ={
+  hotel: hotel = {
     id: '',
     nome: '',
     numeroFixo: ''

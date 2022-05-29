@@ -7,14 +7,7 @@
 
  <p>
   <mat-toolbar class="hotel-header">
-    <mat-form-field class="form" >
 
-      <mat-label> Hotel </mat-label>
-         <mat-select matNativeControl class="select">
-             <mat-option> -- select hotel -- </mat-option>
-             <mat-option [value]="hotel.id" *ngFor="let hotel of hoteis" >{{hotel.nome}}</mat-option>
-         </mat-select>
-      </mat-form-field>
       <mat-form-field class="form" >
          <mat-label> Departamento </mat-label>
          <mat-select matNativeControl class="select">

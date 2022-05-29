@@ -1,7 +1,8 @@
+import { hotel } from 'src/app/hotel/componets/CRUD/reader/hotel.model';
 import { HotelServiceService } from './../../../hotel-service.service';
 
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { hotel } from './hotel.model';
+import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -18,6 +19,13 @@ import { MatSort } from '@angular/material/sort';
 export class HotelComponent implements AfterViewInit{
   hoteis: hotel[] = [];
 
+  hotel: hotel ={
+    id: '',
+    nome: '',
+    numeroFixo: ''
+
+  }
+
   displayedColumns: string[] = [ 'nome', 'numero','departamentos', 'acao'];
   dataSource = new MatTableDataSource<hotel>(this.hoteis);
 
@@ -25,68 +33,49 @@ export class HotelComponent implements AfterViewInit{
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor(private service: HotelServiceService, private router: Router ) { }
+  constructor(private service: HotelServiceService, private router: Router ) {
+
+
+   }
 
   searchKey!: string;
 
   ngAfterViewInit()  {
     this.findAll();
-    this.applyFilter();
-    this.dataSource.filterPredicate = this.createFilter();
   }
-
 
   findAll(){
-    this.service.findAll().subscribe(resposta => {
-      this.hoteis = resposta;
-      this.dataSource = new MatTableDataSource<hotel>(this.hoteis);
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator = this.paginator;
-      console.log(resposta)
+      this.service.findAll().subscribe(resposta => {
+        this.hoteis = resposta;
+        this.dataSource = new MatTableDataSource<hotel>(this.hoteis);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        console.log(resposta)
+      })
+
+  }
+
+  findByName(){
+    this.service.findByName(this.hotel.nome).subscribe(resposta => {
+      if(this.hotel.nome == null){
+        this.findAll();
+      }else{
+        this.dataSource = new MatTableDataSource<hotel>(resposta);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        console.log(resposta)
+
+      }
+
     })
   }
+
   HotelCreate(): void{
     this.router.navigate(["hotel/create"])
   }
 
-  applyFilter(){
+  applyFilter(searchKey: string){
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
-  }
-
-// Custom filter method fot Angular Material Datatable
-
-  createFilter() {
-    let filterFunction = function (data: any, filter: string): boolean {
-      let searchTerms = JSON.parse(filter);
-      let isFilterSet = false;
-      for (const col in searchTerms) {
-        if (searchTerms[col].toString() !== '') {
-          isFilterSet = true;
-        } else {
-          delete searchTerms[col];
-        }
-      }
-
-      console.log(searchTerms);
-
-      let nameSearch = () => {
-        let found = false;
-        if (isFilterSet) {
-          for (const col in searchTerms) {
-            searchTerms[col].trim().toLowerCase().split(' ').forEach((word: any) => {
-              if (data[col].toString().toLowerCase().indexOf(word) != -1 && isFilterSet) {
-                found = true
-              }
-            });
-          }
-          return found
-        } else {
-          return true;
-        }
-      }
-      return nameSearch()
-    }
-    return filterFunction
   }
 
 }

@@ -10,9 +10,9 @@
     <mat-form-field class="form" >
 
       <mat-label> Hotel </mat-label>
-         <mat-select matNativeControl>
-             <mat-option> -- select hotel -- </mat-option>
-             <mat-option [value]="hotel.id" *ngFor="let hotel of hoteis" (keyup)="applyFilter()">{{hotel.nome}}</mat-option>
+         <mat-select matNativeControl  [(ngModel)]="hotel.nome">
+             <mat-option  (click)="findByName()"> -- select hotel -- </mat-option>
+             <mat-option (click)="findByName()"   [value]="hotel.nome" *ngFor="let hotel of hoteis" >{{hotel.nome}}</mat-option>
          </mat-select>
 
     </mat-form-field>
@@ -24,7 +24,7 @@
 
 
     <ng-container matColumnDef="nome">
-      <th mat-header-cell *matHeaderCellDef   > NOME </th>
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> NOME </th>
       <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
     </ng-container>
 

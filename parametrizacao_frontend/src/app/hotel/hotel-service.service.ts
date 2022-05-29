@@ -20,6 +20,11 @@ export class HotelServiceService {
       const url = `${this.baseUrl}/hotel`
       return this.http.get<hotel[]>(url);
     }
+
+    findByName(nome: String): Observable<hotel[]>{
+      const  url = `${this.baseUrl}/hotel/nome?nome=${nome}`
+      return this.http.get<hotel[]>(url)
+    }
 /*
     findAllPaginator(queryBuilder: QueryBuilder): Observable<Page<hotel>>{
       const url = `${this.baseUrl}/hotel?`
