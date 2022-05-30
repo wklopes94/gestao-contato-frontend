@@ -1,0 +1,15 @@
+.menuDiv{color: #F5F5F5; background-color: #7CA7AA; height: 50px;}
+.space{ padding-top: 15px;}
+.bRed{border: 1px solid red;}
+
+.divA{font-size: 15px; min-height: 40px; background-color:#F5F5F5}
+.divB{font-size: 15px; min-height: 60px; background-color:#F5F5F5}
+.divC{font-size: 15px; min-height: 60px; background-color:#F5F5F5}
+
+.divD{font-size: 20px; min-height: 100px; background-color:rgb(248, 220, 141) }
+.divE{font-size: 20px; min-height: 100px; background-color:rgb(207, 184, 119)}
+.divF{font-size: 20px; min-height: 100px; background-color:rgb(209, 174, 79) }
+
+.bigDiv{font-size: 40px; min-height: 480px; background-color:rgb(145, 106, 0) }
+
+.bottomDiv{color: #F5F5F5; background-color: #7CA7AA; height: 30px; font-size: 10px;}

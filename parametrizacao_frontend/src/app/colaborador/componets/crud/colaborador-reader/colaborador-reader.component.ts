@@ -47,7 +47,12 @@ export class ColaboradorReaderComponent implements AfterViewInit {
       this.dataSource.paginator = this.paginator;
       console.log(resposta)
     })
-
 }
+
+    colaboradorCreate(): void{
+      this.router.navigate(["colaborador/create"])
+      console.log
+    }
+
 
 }

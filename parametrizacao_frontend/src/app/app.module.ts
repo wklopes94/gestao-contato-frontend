@@ -19,6 +19,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { GuestComponent } from './guest/guest.component';
 import {MatSortModule} from '@angular/material/sort';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -53,7 +55,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatSortModule,
     ReactiveFormsModule,
     FormsModule,
-
+    MatPaginatorModule,
+    FlexLayoutModule,
+    MatMenuModule
 
 
 

@@ -40,11 +40,10 @@ update(colaborador: ColaboradorModel): Observable<void>{
   return this.http.put<void>(url, colaborador)
 }
 
-createDep(colaborador: ColaboradorModel, id_hotel: String){
+createColab(colaborador: ColaboradorModel, id_departamento: String, id_tipocolab: String){
 
-  const url = `${this.baseUrl}/colaborador?hotelFk=${id_hotel}`
+  const url = `${this.baseUrl}/colaborador?departamentoFk=${id_departamento}&tipoColabFk=${id_tipocolab}`
 	return this.http.post<ColaboradorModel>(url, colaborador)
-
 
 }
 

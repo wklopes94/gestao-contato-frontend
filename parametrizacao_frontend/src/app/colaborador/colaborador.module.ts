@@ -1,3 +1,6 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
@@ -36,6 +39,12 @@ import { ColaboradorUpdateComponent } from './componets/crud/colaborador-update/
     MatSelectModule,
     MatTableModule,
     MatButtonModule,
+
+    MatFormFieldModule,
+    FormsModule,
+    MatSnackBarModule,
+
+
 
 
   ]
