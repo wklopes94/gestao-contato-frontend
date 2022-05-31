@@ -2,13 +2,13 @@
 .space{ padding-top: 15px;}
 .bRed{border: 1px solid red;}
 
-.divA{font-size: 15px; min-height: 40px; background-color:#F5F5F5}
-.divB{font-size: 15px; min-height: 60px; background-color:#F5F5F5}
-.divC{font-size: 15px; min-height: 60px; background-color:#F5F5F5}
+.divA{font-size: 17px; min-height: 40px; background-color:#F5F5F5}
+.divB{font-size: 17px; min-height: 60px; background-color:#F5F5F5}
+.divC{font-size: 17px; min-height: 60px; background-color:#F5F5F5}
 
-.divD{font-size: 20px; min-height: 100px; background-color:rgb(248, 220, 141) }
-.divE{font-size: 20px; min-height: 100px; background-color:rgb(207, 184, 119)}
-.divF{font-size: 20px; min-height: 100px; background-color:rgb(209, 174, 79) }
+.divD{font-size: 20px; min-height: 50px; background-color:rgb(248, 220, 141) }
+.divE{font-size: 17px; min-height: 40px; background-color:rgb(207, 184, 119)}
+.divF{font-size: 20px; min-height: 100px; background-color:rgb(209, 174, 79)}
 
 .bigDiv{font-size: 40px; min-height: 480px; background-color:rgb(145, 106, 0) }
 
