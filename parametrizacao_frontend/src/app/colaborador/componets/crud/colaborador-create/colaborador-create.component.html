@@ -50,14 +50,6 @@
 </p>
 <p>
   <mat-form-field class="form">
-    <mat-label> Extensao </mat-label>
-      <mat-select id="hotel_fk" name="hotelfk" [(ngModel)]="colaborador.extensaofk" placeholder="">
-          <mat-option   [value]="" *ngFor="let hotel of Extensoes"></mat-option>
-      </mat-select>
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field class="form">
     <mat-label>Numero RH</mat-label>
     <input matInput [(ngModel)]="colaborador.numeroRh" type="text" name="nome"  required minlength="4"  #name="ngModel">
       <div *ngIf="name.errors?.['required']">

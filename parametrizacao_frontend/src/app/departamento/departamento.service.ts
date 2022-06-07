@@ -47,8 +47,11 @@ createDep(departamento: Departamento, id_hotel: String){
 
   const url = `${this.baseUrl}/departamento?hotelFk=${id_hotel}`
 	return this.http.post<Departamento>(url, departamento)
+}
 
-
+findByName(nome: String): Observable<Departamento[]>{
+  const  url = `${this.baseUrl}/departamento/nome?nome=${nome}`
+  return this.http.get<Departamento[]>(url)
 }
 
 }

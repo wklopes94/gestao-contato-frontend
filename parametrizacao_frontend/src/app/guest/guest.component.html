@@ -1,6 +1,6 @@
-<div class="space"></div>
+<div class="footer"></div>
 <div fxLayout="row wrap" fxLayoutAlign="center center">
-  <div class="menuDiv" fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="center center ">
+  <div class="menuDiv" fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="center center">
     <div fxLayoutAlign="center center">
       <mat-icon class="mat-18">supervised_user_circle</mat-icon>
       <span>Lista de Colaboradores</span>
@@ -17,95 +17,130 @@
         </mat-menu>
     </div>
   </div>
-  <div class="space" fxFlex="100%"></div>
+  <div class="footer" fxFlex="100%"></div>
 <!-- 2nd Div -->
-<div class="2ndDiv" fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayout=" wrap" fxLayoutAlign="center center ">
+<div class="2ndDiv" fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayout=" wrap" fxLayoutAlign="center center">
 
-  <div class="divA" fxFlex="25%" fxFlex.sm="50%"  fxFlex.xs="100%" fxLayoutAlign="center center ">
+  <div class="divA" fxFlex="25%" fxFlex.sm="50%"  fxFlex.xs="100%" fxLayoutAlign="center center">
       <mat-form-field class="form" fxFlex="80%" fxFlex.sm="100"  fxFlex.xs="100%">
 
         <mat-label> Hotel </mat-label>
-           <mat-select matNativeControl  >
-               <mat-option > -- select Hotel -- </mat-option>
-               <mat-option ></mat-option>
+           <mat-select matNativeControl #selectHotel [(ngModel)]="hotel.nome">
+               <mat-option (click)="findByName()" > -- select Hotel -- </mat-option>
+               <mat-option (click)="findByName()" [value]="hotelSel.nome" *ngFor="let hotelSel of hotelSelect">{{hotelSel.nome}}</mat-option>
            </mat-select>
 
       </mat-form-field>
 
   </div>
-  <div class="divB" fxFlex="25%" fxFlex.sm="50%"  fxFlex.xs="100%" fxLayoutAlign="center center ">
+  <div class="divB" fxFlex="25%" fxFlex.sm="50%"  fxFlex.xs="100%" fxLayoutAlign="center center"  >
 
     <mat-form-field class="form" fxFlex="80%" fxFlex.sm="100"  fxFlex.xs="100%">
 
       <mat-label> Departamento </mat-label>
          <mat-select matNativeControl  >
+
              <mat-option > -- select Departamento -- </mat-option>
-             <mat-option ></mat-option>
+            <div *ngFor="let hotel of hoteis">
+             <mat-option *ngFor="let dep of hotel.departamentosModel">{{dep.nome}}</mat-option>
+            </div>
          </mat-select>
 
     </mat-form-field>
 
   </div>
-  <div class="divC" fxFlex="50%" fxFlex.sm="50%"  fxFlex.xs="100%" fxLayoutAlign="star center ">
+  <div class="divC" fxFlex="50%" fxFlex.sm="50%"  fxFlex.xs="100%" fxLayoutAlign="star center">
 
     <mat-form-field class="form" fxFlex="50%" fxFlex.sm="100"  fxFlex.xs="100%">
 
       <mat-label> Colaborador </mat-label>
          <mat-select matNativeControl  >
              <mat-option > -- select Colaborador -- </mat-option>
-             <mat-option ></mat-option>
+             <div *ngFor="let hotel of hoteis">
+               <div *ngFor="let dep of hotel.departamentosModel"> <mat-option *ngFor="let colab of dep.colaboradorModel"> {{colab.nomeColab}} </mat-option> </div>
+              </div>
+
          </mat-select>
 
     </mat-form-field>
 
   </div>
 
+
 </div>
-<div class="space" fxFlex="100%"></div>
+
+<div class="footer" fxFlex="70%" ></div>
 <!-- 3nd Div -->
-<div fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayout=" wrap">
-  <div fxFlex="100%" fxFlex.sm="100%"  fxFlex.xs="100%" fxLayoutAlign="center center ">
-    <div class="divD" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="star center ">
+<div fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayout=" wrap" *ngFor="let hotel of hoteis">
+  <div fxFlex="100%" fxFlex.sm="100%"  fxFlex.xs="100%" fxLayoutAlign="center center">
+    <div class="divD" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="star center">
       <i class="material-icons">account_balance</i>
-              Hotel:
+              Hotel: {{hotel.nome}}
     </div>
   </div>
-  <div fxFlex="100%" fxFlex.sm="100%"  fxFlex.xs="100%" fxLayoutAlign="star center ">
-    <div class="divE" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="star center ">
-      <i class="material-icons">contact_phone</i>
-              Fax:
 
-      <i class="material-icons">phone</i>
-              Telefone:
-    </div>
 
-  </div>
-  <div class="space" fxFlex="100%"></div>
-  <div fxFlex="100%" fxFlex.sm="100%"  fxFlex.xs="100%" fxLayoutAlign="star center ">
-    <div class="divD" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="star center ">
-      <i class="material-icons">table_chart</i>
-              Departamento
+  <div class="divB" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="star center " fxLayout=" wrap">
+            <i class="material-icons">contact_phone</i>
+                    Fax: {{hotel.numeroFixo}}
+
+            <i class="material-icons">phone</i>
+                    Telefone: {{hotel.numeroFixo}}
+
+      <div class="divW"  fxFlex="100%" fxFlex.sm="100%"  fxFlex.xs="100%" fxLayoutAlign="star center " fxLayout=" wrap" *ngFor="let dep of hotel.departamentosModel">
+
+             <i class="material-icons">table_chart</i>
+                  Departamento: <div fxLayoutAlign="star center "> {{dep.nome}} </div>
+
+          <div class="divD" fxFlex="100%" fxFlex.sm="100%"  fxFlex.xs="100%" fxLayoutAlign="star center ">
+
+                  <i class="material-icons">call</i>
+                  Extensão:<div *ngFor="let ext of dep.extensaoModel">{{ext.numero}}</div>
+
+          </div>
+
+          <div class="divF" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="star star ">
+
+
+
+                <div fxLayout="column">
+                  <p>
+                  <i class="material-icons">supervised_user_circle</i>
+
+                   Colaborador:
+                  </p>
+                  <div class="divF" fxFlex="100%" fxFlex.sm="70%" fxFlex.xs="10%" fxLayoutAlign="star end" *ngFor="let colab of dep.colaboradorModel">
+
+                        <i class="material-icons">account_box</i>
+                      {{colab.nomeColab}}
+
+                      <i class="material-icons">phone</i>
+                      {{colab.telefoneColab}}
+
+                      <i class="material-icons">alternate_email</i>
+                      {{colab.emailColab}}
+
+                      <i class="material-icons">pin_drop</i>
+                      {{colab.enderecoColab}}
+
+               </div>
+          </div>
+
+
+
+          </div>
     </div>
+    <div class="footer" fxFlex="100%"></div>
+    <div class="space" fxFlex="100%"></div>
+    <div class="footer" fxFlex="100%"></div>
   </div>
-  <div fxFlex="100%" fxFlex.sm="100%"  fxFlex.xs="100%" fxLayoutAlign="star center ">
-    <div class="divE" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="star center ">
-      <i class="material-icons">call</i>
-              Extensão
-    </div>
-  </div>
-  <div class="space" fxFlex="100%"></div>
-  <div fxFlex="100%" fxFlex.sm="100%"  fxFlex.xs="100%" fxLayoutAlign="star center ">
-    <div class="divF" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="star center ">
-      <i class="material-icons">supervised_user_circle</i>
-              Colaborador
-    </div>
-  </div>
+
 </div>
 <!-- 4nd Div -->
-<div class="space" fxFlex="100%"></div>
+<div class="footer" fxFlex="100%"></div>
 <div class="bottomDiv" fxFlex="70%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="center center ">
   All copyright reserved Oasis Dev
 </div>
-<div class="space" fxFlex="100%"></div>
+<div class="footer" fxFlex="100%"></div>
 <!-- end -->
 </div>
